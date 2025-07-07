@@ -6,13 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview --port 5000"
+    "serve": "vite preview --port 5000",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "three": "^0.158.0",
-    "lil-gui": "^0.18.0"
+    "lil-gui": "^0.18.0",
+    "three": "^0.158.0"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "vite": "^5.0.0"
   }
-} 
+}
