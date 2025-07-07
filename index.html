@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three.js Starter</title>
+    <link rel="icon" href="/assets/favicon.ico" />
+    <script type="module" crossorigin src="/fan/assets/index-up7K78Qe.js"></script>
+    <link rel="stylesheet" crossorigin href="/fan/assets/index-J7iAbm9a.css">
+  </head>
+  <body>
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Control Panel -->
+    <button id="uiToggleBtn" title="Hide Controls">👁️</button>
+    <button id="fullscreenBtn" title="Enter Fullscreen">⛶</button>
+    <div id="controls">
+      <button id="powerBtn" title="Power">⏻</button>
+
+      <label title="Speed" class="ctrl-label"
+        >💨
+        <input
+          id="speedRange"
+          type="range"
+          min="0"
+          max="5"
+          step="0.1"
+          value="1"
+        />
+      </label>
+
+      <label title="Direction" class="ctrl-label"
+        >↔️
+        <input
+          id="dirRange"
+          type="range"
+          min="0"
+          max="6.283"
+          step="0.01"
+          value="1.6"
+        />
+      </label>
+
+      <label title="Tilt" class="ctrl-label"
+        >↕️
+        <input
+          id="rotXRange"
+          type="range"
+          min="-1.57"
+          max="1.57"
+          step="0.01"
+          value="0"
+        />
+      </label>
+
+      <label title="Height" class="ctrl-label"
+        >⬆️
+        <input
+          id="heightRange"
+          type="range"
+          min="-3"
+          max="3"
+          step="0.01"
+          value="0"
+        />
+      </label>
+
+      <label title="Scale" class="ctrl-label"
+        >🔍
+        <input
+          id="scaleRange"
+          type="range"
+          min="0.1"
+          max="10"
+          step="0.1"
+          value="7"
+        />
+      </label>
+
+      <button id="resetBtn" title="Reset to Defaults">🔄</button>
+    </div>
+
+  </body>
+</html>
