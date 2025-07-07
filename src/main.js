@@ -1,7 +1,9 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
-// File name of the 3D model to load
+// Base path injected by Vite (e.g., "/" in dev, "/fan/" in prod if base is set)
+const BASE_URL = import.meta.env.BASE_URL || "/";
+const MODEL_DIR = `${BASE_URL}models/`;
 const MODEL_FILE = "scene.gltf";
 
 // Default transform values for the loaded model
@@ -44,15 +46,14 @@ function init() {
 
   // Load fan model
   const gltfLoader = new GLTFLoader();
-  gltfLoader.setPath("/models/");
-  // Ensure relative resource paths resolve correctly (textures/bin)
-  // gltfLoader.setResourcePath('/models/');
+  gltfLoader.setPath(MODEL_DIR);
+  gltfLoader.setResourcePath(MODEL_DIR);
   gltfLoader.load(
     MODEL_FILE,
     (gltf) => {
       const object = gltf.scene;
       model = object;
-      console.log(`${MODEL_FILE} loaded`, object);
+      console.log(`Loaded ${MODEL_DIR}${MODEL_FILE}`, object);
 
       // Center and scale model
       const box = new THREE.Box3().setFromObject(object);
